@@ -74,19 +74,15 @@ public class Manager {
 						BuscaBlog.buscarBlog(driver, varGlobal, prinElem, gblv, evenTyp, navVar));
 				System.out.println(gblv.isReturnExecution());
 			}
-			/*
-			 if (gblv.isReturnExecution()) {
-
-				gblv.setReturnExecution(
-						PesquisaEmpresa.pesquisaNewEmpresa(driver, varGlobal, prinElem, gblv, evenTyp, navVar));
-				System.out.println(gblv.isReturnExecution());
-
-			} else {// Reporta o problema
-					// Continue;
-			}			
-			 if (gblv.isReturnExecution()){ chama o proximo }else{ registra no
-			 relatorio doc.close }
-			 */
+			
+			else {// Reporta o problema
+				// Continue;
+			}
+			
+			Thread.sleep(1000);
+			
+			driver.close();
+			
 		}
 	}
 }
