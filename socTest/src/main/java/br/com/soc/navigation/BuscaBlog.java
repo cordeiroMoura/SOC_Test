@@ -66,10 +66,10 @@ public class BuscaBlog {
 				/*********************************************************************************/	
 				
 		// Evidência - Resultado busca
+				
+				Thread.sleep(2000);
 
-		Thread.sleep(1000);
-
-		ActionsValues.atributtesActions(varGlobals, "//*[@id='blog']/div/div[2]", "Tela da busca ",
+		ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div", "Mensagem: ",
 						varGlobals.getCaptureText(), "", "Falha ao capturar Texto: " + varGlobals.getOp1());
 
 				DefineAction.defineAction(tpEvent, "xpath", "captureScreen");
@@ -78,26 +78,11 @@ public class BuscaBlog {
 						varsManager.getDir2()) == true) {
 
 					ManagerPdf.tableTitlePage(driver, varsManager.getDocPDF());
-					varsManager.setMessage("Resultado da busca: ");
+					varsManager.setMessage("Mensagem ");
 					Evidence.evidenceResult(driver, varsManager.getDocPDF(), varsManager.getDir2(), varsManager.getMessage(),
 							false);
 				}
 				
-				Thread.sleep(3000);
-
-		ActionsValues.atributtesActions(varGlobals, "//*[@id='blog']/div/div[1]/div/h2", "Mensagem:",
-						varGlobals.getCaptureText(), "", "Falha ao capturar Texto: " + varGlobals.getOp1());
-
-				DefineAction.defineAction(tpEvent, "xpath", "captureScreen");
-
-				if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
-						varsManager.getDir2()) == true) {
-
-					ManagerPdf.tableTitlePage(driver, varsManager.getDocPDF());
-					varsManager.setMessage("Mensagem: ");
-					Evidence.evidenceResult(driver, varsManager.getDocPDF(), varsManager.getDir2(), varsManager.getMessage(),
-							false);
-				}
 		return true;
 	}
 }
