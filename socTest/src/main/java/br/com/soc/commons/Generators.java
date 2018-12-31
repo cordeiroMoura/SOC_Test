@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Generators {
 	
-	public static String sorteiaReclamacao(){
+	public static String sorteiaValueBusca(){
 		
 		String valueBusca = "branco/informática/tecnologia/SOC/AGE";				
 	
@@ -295,9 +295,7 @@ public class Generators {
 
 		return nomeCidade;
 
-	}
-
-	
+	}	
 
 	public static String genrateTextReplicate() {
 

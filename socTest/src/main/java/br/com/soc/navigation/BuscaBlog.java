@@ -28,9 +28,9 @@ public class BuscaBlog {
 
 		/*********************************************************************************/
 
-		// 
+		// Click no input de Busca do Blog 
 
-		ActionsValues.atributtesActions(varGlobals, "//*[@id=\"cover\"]/div[3]/div[2]/a[2]", "Cadastre se", "Click", "",
+		ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div/form/input[3]", "Selecionou o input", "Click", "",
 				"Falha ao clicar no botao " + varGlobals.getOp1());
 
 		DefineAction.defineAction(tpEvent, "xpath", "click");
@@ -46,29 +46,7 @@ public class BuscaBlog {
 
 		/*********************************************************************************/
 
-		// 
-
-		if (variables[3].equals("")) {
-
-			variables[3] = Generators.generateNames();
-		}
-
-		ActionsValues.atributtesActions(varGlobals, "name", "Nome", variables[3], "",
-				"Falha ao preencher o campo " + varGlobals.getOp1());
-
-		DefineAction.defineAction(tpEvent, "name", "sendKeys");
-
-		if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
-				varsManager.getDir2()) == false)
-			return false;
-
-		if (variables[4].equals("")) {
-			variables[4] = Generators.generateSurnames();
-		}
-
-		/*********************************************************************************/
-
-		// 
+		// Preenche palavra para buscar
 
 		ActionsValues.atributtesActions(varGlobals, "surname", "Sobre Nome", variables[4], "",
 				"Falha ao preencher o campo " + varGlobals.getOp1());

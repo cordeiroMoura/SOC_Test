@@ -25,7 +25,5 @@ public class Main {
 			dir = ManagerFolders.generateRootFolder(date, nameExecution);
 
 			Manager.managerExecution(driver, dir, date);
-			
-			System.out.println(dir);
 	}
 }
