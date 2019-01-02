@@ -66,8 +66,8 @@ public class ManagerPdf {
 
 		PdfPCell lblVersion = new PdfPCell(new Paragraph("Versao", normal));
 		PdfPCell txtVersion = new PdfPCell(new Paragraph("V1", boldFont));
-		// PdfPCell lblCT = new PdfPCell(new Paragraph("CT", normal));
-		// PdfPCell txtCT = new PdfPCell(new Paragraph(nomeCT));
+		//PdfPCell lblCT = new PdfPCell(new Paragraph("CT", normal));
+		//PdfPCell txtCT = new PdfPCell(new Paragraph("nomeCT", normal));
 		PdfPCell lblExecutor = new PdfPCell(new Paragraph("Executor", normal));
 		PdfPCell txtExecutor = new PdfPCell(new Paragraph(System.getProperty("user.name")));
 		PdfPCell lblData = new PdfPCell(new Paragraph("Data", normal));

@@ -1,5 +1,6 @@
 package br.com.soc.navigation;
 
+import com.itextpdf.*;
 import org.openqa.selenium.WebDriver;
 import br.com.soc.commons.ActionsValues;
 import br.com.soc.commons.DefineAction;
@@ -46,11 +47,11 @@ public class BuscaBlog {
 
 				DefineAction.defineAction(tpEvent, "xpath", "sendKeys");
 
-				if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
-						varsManager.getDir2()) == false)
-					return false;
+		if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
+				varsManager.getDir2()) == false)
+			return false;
 
-				/*********************************************************************************/
+		/*********************************************************************************/
 				
 		// Preenche palavra para buscar
 
@@ -59,11 +60,11 @@ public class BuscaBlog {
 
 				DefineAction.defineAction(tpEvent, "xpath", "click");
 
-				if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
-						varsManager.getDir2()) == false)
-					return false;
+		if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
+				varsManager.getDir2()) == false)
+			return false;
 
-				/*********************************************************************************/	
+		/*********************************************************************************/	
 				
 		// Evidência - Resultado busca
 				
@@ -74,8 +75,8 @@ public class BuscaBlog {
 
 				DefineAction.defineAction(tpEvent, "xpath", "captureScreen");
 
-				if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
-						varsManager.getDir2()) == true) {
+		if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
+				varsManager.getDir2()) == true) {
 
 					ManagerPdf.tableTitlePage(driver, varsManager.getDocPDF());
 					varsManager.setMessage("Mensagem ");

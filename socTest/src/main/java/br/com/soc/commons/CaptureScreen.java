@@ -19,8 +19,8 @@ public class CaptureScreen {
         // Printa tela
         Rectangle screenRect = new Rectangle (Toolkit.getDefaultToolkit ().getScreenSize ());
         BufferedImage screenFullImage = robot.createScreenCapture (screenRect);
-        ImageIO.write (screenFullImage, format, new File (savePathEvidence + "/" + titlePage + ".png"));
-        String pathEvidence = savePathEvidence + "/" + titlePage + ".png";
+        ImageIO.write (screenFullImage, format, new File (savePathEvidence + "/" + titlePage + ".jpg"));
+        String pathEvidence = savePathEvidence + "/" + titlePage + ".jpg";
 
         return pathEvidence;
     }

@@ -3,6 +3,7 @@ package br.com.soc.runner;
 import java.io.File;
 import org.openqa.selenium.WebDriver;
 import com.opencsv.CSVReader;
+import com.itextpdf.*;
 import br.com.soc.commons.Browsers;
 import br.com.soc.commons.DataSource;
 import br.com.soc.commons.EventType;
@@ -79,7 +80,7 @@ public class Manager {
 				// Continue;
 			}
 			
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			
 			driver.close();
 			
