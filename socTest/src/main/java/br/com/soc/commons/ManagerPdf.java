@@ -309,7 +309,6 @@ public class ManagerPdf {
         
         doc.newPage ();
 
-        ManagerPdf.addHeaderFilePdf(doc, "");
-        doc.close();
+        ManagerPdf.addHeaderFilePdf(doc, "");        
     }		
 }

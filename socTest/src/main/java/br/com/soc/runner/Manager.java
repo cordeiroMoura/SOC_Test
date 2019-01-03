@@ -77,14 +77,14 @@ public class Manager {
 				gblv.setReturnExecution(
 						BuscaBlog.buscarBlog(driver, varGlobal, prinElem, gblv, evenTyp, navVar));
 				System.out.println(gblv.isReturnExecution());
-				
+				gblv.getDocPDF().close();				
 			}
 			
 			else {// Reporta o problema
 				// Continue;
 			}
 			
-			Thread.sleep(2000);
+			Thread.sleep(1500);
 			
 			driver.close();
 			
