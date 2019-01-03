@@ -48,9 +48,6 @@ public class BuscaBlog {
 		DefineAction.defineAction(tpEvent, "xpath", "sendKeys");
 		
 		if (variables[3] == null){
-			ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div/form/input[3]", "Buscar por: ", "Testando_Botão_Limpar",
-					"",	"Falha ao preencher o campo " + varGlobals.getOp1());
-			DefineAction.defineAction(tpEvent, "xpath", "sendKeys");
 			
 			ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div/form/a", "Limpar", "", "",
 					"Falha ao Limpar campo " + varGlobals.getOp1());
