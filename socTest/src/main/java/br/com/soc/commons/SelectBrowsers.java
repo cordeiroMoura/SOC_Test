@@ -12,7 +12,7 @@ public class SelectBrowsers {
 public static WebDriver startChromeDriver(WebDriver driver) throws IOException{
 		
 		Properties prop = FileProperties.getProp();
-		String caminhoChromeDriver = prop.getProperty("chromedriverjose");
+		String caminhoChromeDriver = prop.getProperty("chromedriverSoc");
 				
 		System.setProperty("webdriver.chrome.driver", caminhoChromeDriver );
 		ChromeOptions options = new ChromeOptions();
