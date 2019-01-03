@@ -1,6 +1,6 @@
 package br.com.soc.navigation;
 
-import com.itextpdf.*;
+
 import org.openqa.selenium.WebDriver;
 import br.com.soc.commons.ActionsValues;
 import br.com.soc.commons.DefineAction;
@@ -12,6 +12,7 @@ import br.com.soc.commons.ManagerPdf;
 import br.com.soc.commons.NavigationVariable;
 import br.com.soc.commons.PrintElement;
 import br.com.soc.commons.SetGlobalVariables;
+import br.com.soc.runner.Manager;
 
 public class BuscaBlog {
 	
@@ -44,8 +45,19 @@ public class BuscaBlog {
 
 		ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div/form/input[3]", "Buscar por: ", variables[3], "",
 				"Falha ao preencher o campo " + varGlobals.getOp1());
+		DefineAction.defineAction(tpEvent, "xpath", "sendKeys");
+		
+		if (variables[3] == null){
+			ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div/form/input[3]", "Buscar por: ", "Testando_Botão_Limpar",
+					"",	"Falha ao preencher o campo " + varGlobals.getOp1());
+			DefineAction.defineAction(tpEvent, "xpath", "sendKeys");
+			
+			ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div/form/a", "Limpar", "", "",
+					"Falha ao Limpar campo " + varGlobals.getOp1());
+			DefineAction.defineAction(tpEvent, "xpath", "click");
+		}
 
-				DefineAction.defineAction(tpEvent, "xpath", "sendKeys");
+				
 
 		if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
 				varsManager.getDir2()) == false)
@@ -63,6 +75,7 @@ public class BuscaBlog {
 		if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
 				varsManager.getDir2()) == false)
 			return false;
+		
 
 		/*********************************************************************************/	
 				
@@ -81,9 +94,11 @@ public class BuscaBlog {
 					ManagerPdf.tableTitlePage(driver, varsManager.getDocPDF());
 					varsManager.setMessage("Mensagem ");
 					Evidence.evidenceResult(driver, varsManager.getDocPDF(), varsManager.getDir2(), varsManager.getMessage(),
-							false);
-				}
-				
+							
+							false);					
+		}
+		
+		
 		return true;
 	}
 }

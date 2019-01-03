@@ -1,6 +1,9 @@
 package br.com.soc.runner;
 
 import java.io.File;
+
+import javax.print.Doc;
+
 import org.openqa.selenium.WebDriver;
 import com.opencsv.CSVReader;
 import com.itextpdf.*;
@@ -74,13 +77,14 @@ public class Manager {
 				gblv.setReturnExecution(
 						BuscaBlog.buscarBlog(driver, varGlobal, prinElem, gblv, evenTyp, navVar));
 				System.out.println(gblv.isReturnExecution());
+				
 			}
 			
 			else {// Reporta o problema
 				// Continue;
 			}
 			
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			
 			driver.close();
 			

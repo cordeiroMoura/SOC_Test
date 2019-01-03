@@ -29,10 +29,10 @@ public class ManagerPdf {
 
 		Document doc = new Document(PageSize.A4);
 
-		OutputStream os = new FileOutputStream(dir2 + "/" + "resultExecution.pdf");
+		OutputStream os = new FileOutputStream(dir2 + "/" + "relatorioTeste.pdf");
 		PdfWriter.getInstance(doc, os);
 		doc.open();
-
+		
 		return doc;
 	}
 
@@ -52,7 +52,8 @@ public class ManagerPdf {
 		// Define a quantidade colunas cabeçalho
 		PdfPTable tableHeader = new PdfPTable(new float[] { 0.17f, 0.31f, 0.15f, 0.37f });
 
-		PdfPCell header = new PdfPCell(new Paragraph("Evidencias de Teste - Reserva de voo", changeFont));
+		PdfPCell header = new PdfPCell(new Paragraph("Teste Automação - SOC Soft. Integ. de Gestão Ocupacional",
+				changeFont));
 		header.setUseBorderPadding(true);
 		header.setBorderColor(BaseColor.BLUE);
 		header.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -305,8 +306,10 @@ public class ManagerPdf {
         tableImage.addCell (subtitlecell);
 
         doc.add (tableImage);
+        
         doc.newPage ();
 
         ManagerPdf.addHeaderFilePdf(doc, "");
-    }
+        doc.close();
+    }		
 }

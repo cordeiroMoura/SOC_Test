@@ -9,6 +9,7 @@ import br.com.soc.commons.FileProperties;
 
 public class ReadFileCsv {
 	
+	@SuppressWarnings("deprecation")
 	public static CSVReader readFileCSV() throws IOException{
 
         Properties prop = FileProperties.getProp();

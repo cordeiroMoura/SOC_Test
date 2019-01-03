@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import br.com.soc.commons.CaptureData;
 import br.com.soc.commons.ConfigDesktop;
 import br.com.soc.commons.ManagerFolders;
+import br.com.soc.commons.ManagerPdf;
 import br.com.soc.runner.Manager;
 
 public class Main {
@@ -24,7 +25,9 @@ public class Main {
 			nameExecution = CaptureData.nameRandomExecution();
 
 			dir = ManagerFolders.generateRootFolder(date, nameExecution);
-
-			Manager.managerExecution(driver, dir, date);
+			
+			
+			Manager.managerExecution(driver, dir, date);			
+						
 	}
 }

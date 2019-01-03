@@ -18,7 +18,7 @@ public class ManagerFolders {
 
 	public static File generateSubFolders(File dir, int contTestCase, String nameTC) {
 
-		File dir2 = new File(dir + "/" + nameTC + "_Result_" + contTestCase);
+		File dir2 = new File(dir + "/" + nameTC + "_00" + contTestCase);
 		dir2.mkdir();
 
 		return dir2;
