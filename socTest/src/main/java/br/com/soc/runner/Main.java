@@ -24,10 +24,8 @@ public class Main {
 
 			nameExecution = CaptureData.nameRandomExecution();
 
-			dir = ManagerFolders.generateRootFolder(date, nameExecution);
+			dir = ManagerFolders.generateRootFolder(date, nameExecution);			
 			
-			
-			Manager.managerExecution(driver, dir, date);			
-						
+			Manager.managerExecution(driver, dir, date);					
 	}
 }

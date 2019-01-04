@@ -1,6 +1,7 @@
 package br.com.soc.navigation;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import br.com.soc.commons.ActionsValues;
 import br.com.soc.commons.DefineAction;
@@ -40,41 +41,49 @@ public class BuscaBlog {
 			return false;		
 		
 		/*********************************************************************************/
-
+		
+		if (variables[3] != null) {
 		// Preenche palavra para buscar
-
 		ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div/form/input[3]", "Buscar por: ", variables[3], "",
 				"Falha ao preencher o campo " + varGlobals.getOp1());
 		DefineAction.defineAction(tpEvent, "xpath", "sendKeys");
 		
-		if (variables[3] == null){
-			
-			ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div/form/a", "Limpar", "", "",
-					"Falha ao Limpar campo " + varGlobals.getOp1());
-			DefineAction.defineAction(tpEvent, "xpath", "click");
-		}
-
-				
-
 		if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
 				varsManager.getDir2()) == false)
-			return false;
-
+			return false;	
+		}
+		
+		// Teste click botão limpar
+		if (variables[3] == null){				
+		
+		driver.findElement(By.xpath("//*[@id=\"blog\"]/div/div[1]/div/form/input[3]")).sendKeys("Teste");
+		
+		ActionsValues.atributtesActions(varGlobals, "//section[@id='blog']/div/div/div/form/input[3]", "Click botão limpar", "Click", "",
+				"Falha ao clicar no botão " + varGlobals.getOp1());
+		
+		DefineAction.defineAction(tpEvent, "xpath", "click");
+									
+		if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
+				varsManager.getDir2()) == false)
+			return false;	
+		}
+		
 		/*********************************************************************************/
-				
-		// Preenche palavra para buscar
+		
+		// Pesquisar palavra para buscar
 
 		ActionsValues.atributtesActions(varGlobals, "//*[@id=\"blog\"]/div/div[1]/div/form/input[1]", "Click na lupa", "Click", "",
-				"Falha ao cliacar no botão " + varGlobals.getOp1());
+				"Falha ao clicar no botão " + varGlobals.getOp1());
 
 				DefineAction.defineAction(tpEvent, "xpath", "click");
 
 		if (ExecutionAction.executionAction(driver, varGlobals, prntElement, tpEvent, varsManager.getDocPDF(),
 				varsManager.getDir2()) == false)
 			return false;
-		
+				
 
 		/*********************************************************************************/	
+
 				
 		// Evidência - Resultado busca
 				

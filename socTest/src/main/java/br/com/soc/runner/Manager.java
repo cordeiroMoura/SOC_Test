@@ -70,6 +70,7 @@ public class Manager {
 			PrintElement prinElem = new PrintElement();
 			EventType evenTyp = new EventType();
 
+			@SuppressWarnings("unused")
 			String[] variables = navVar.getVariables();
 
 			if (gblv.isReturnExecution()) {
@@ -78,10 +79,6 @@ public class Manager {
 						BuscaBlog.buscarBlog(driver, varGlobal, prinElem, gblv, evenTyp, navVar));
 				System.out.println(gblv.isReturnExecution());
 				gblv.getDocPDF().close();				
-			}
-			
-			else {// Reporta o problema
-				// Continue;
 			}
 			
 			Thread.sleep(1500);

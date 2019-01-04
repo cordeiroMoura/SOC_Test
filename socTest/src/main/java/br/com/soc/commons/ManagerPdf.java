@@ -153,13 +153,13 @@ public class ManagerPdf {
 		Font changeFontlbl = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
 		Font changeFonttxt = new Font(Font.FontFamily.TIMES_ROMAN, 10);
 
-		Paragraph lblFieldrequirements = new Paragraph("Requirements : ", changeFontlbl);
+		Paragraph lblFieldrequirements = new Paragraph("Number TC : ", changeFontlbl);
 		Paragraph txtFieldrequirements = new Paragraph(variables[0], changeFonttxt);
 
 		Paragraph lblFieldtarget = new Paragraph("Target Test : ", changeFontlbl);
 		Paragraph txtFieldtarget = new Paragraph(variables[1], changeFonttxt);
 
-		Paragraph lblFieldnameTest = new Paragraph("Name Test Case : ", changeFontlbl);
+		Paragraph lblFieldnameTest = new Paragraph("Title Test Case : ", changeFontlbl);
 		Paragraph txtFieldnameTest = new Paragraph(variables[2], changeFonttxt);
 
 		DottedLineSeparator dottedLine = new DottedLineSeparator();

@@ -28,7 +28,5 @@ public class Evidence {
 
 			ManagerPdf.addReportImage(driver, doc, pathEvidence, message);
 		}
-
 	}
-
 }

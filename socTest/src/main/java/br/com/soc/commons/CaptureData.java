@@ -3,9 +3,7 @@ package br.com.soc.commons;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Properties;
 import java.util.Random;
-import org.openqa.selenium.WebDriver;
 
 public class CaptureData {
 	
