@@ -54,7 +54,7 @@ public class BuscaBlog {
 		}
 		
 		// Teste click botão limpar
-		if (variables[3] == null){				
+		if (variables[3] == ""){				
 		
 		driver.findElement(By.xpath("//*[@id=\"blog\"]/div/div[1]/div/form/input[3]")).sendKeys("Teste");
 		
