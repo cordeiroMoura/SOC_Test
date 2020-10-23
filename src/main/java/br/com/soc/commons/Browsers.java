@@ -9,7 +9,8 @@ public class Browsers {
 				
 		try{
 			Properties prop = FileProperties.getProp();
-			driver.get(prop.getProperty("url"));	
+			driver.get(prop.getProperty("url"));
+			System.out.println("teste");	
 			
 		}catch(Exception e ){
 			
